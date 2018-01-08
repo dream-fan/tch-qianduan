@@ -35,7 +35,7 @@ gulp.task("script",function  () {
 gulp.task("image",function  () {
 	gulp.src("app/images/*")
 	.pipe(imagemin())
-	.pipe(gulp.dest("dist/image"))
+	.pipe(gulp.dest("dist/images"))
 })
 
 
