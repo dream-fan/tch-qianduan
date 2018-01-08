@@ -47,8 +47,8 @@
 
 
 # 如何使用
-	* 把项目克隆下来 git 
-	* cd 项目目录
-	* npm install
-	* run bulid
-	* npm run watch
+	** 把项目克隆下来 git 
+	** cd 项目目录
+	** npm install
+	** run bulid
+	** npm run watch
