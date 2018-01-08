@@ -3,9 +3,106 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="../../dist/css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="../../lib/swiper/css/swiper.min.css"/>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../lib/swiper/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		
+		<header>
+			<div class="left">
+				<div class="kaifeng">
+					<span>开封</span>
+					<a href="#">[切换城市]</a>
+					<span><a href="#">同城帮首页</a></span>
+				</div>
+				<ul>
+					<li><a href="#">登录</a></li>
+					<li><a href="#">注册</a></li>
+					<li><a href="#">我的订单</a></li>
+					<li><a href="#">在线客服(9:00-21:00)</a></li>
+					<li><a href="#">客户服务</a></li>
+					<li><a href="#">论坛</a></li>
+					<li><a href="#">投诉建议</a></li>
+				</ul>
+			</div>
+		</header>
+		<section id="header">
+			<div id="ershou">
+				<div class="log">
+					<img src="../images/logo.png"/>
+					<ul>
+						<li><a href="#">二手优品</a></li>
+						<li><a href="#">手机回收</a></li>
+						<li><a href="#">手机维修</a></li>
+						<li><a href="#">电脑维修</a></li>
+						<li><a href="#">以旧换新</a></li>
+						<li><a href="#">手机租用</a></li>
+					</ul>
+				</div>
+				<div class="swiper-container">
+				    <div class="swiper-wrapper">
+				      <div class="swiper-slide"><img src="../images/轮播1.png"/></div>
+				      <div class="swiper-slide"><img src="../images/轮播2.png"/></div>
+				      <div class="swiper-slide"><img src="../images/轮播3.jpg"/></div>
+				      <div class="swiper-slide"><img src="../images/轮播4.png"/></div>
+				    </div>
+					<div class="swiper-pagination"></div>
+	  			</div>
+			</div>
+		</section>
+		<section id="center">
+			<div id="center-zong">
+				<section class="center-top">
+					<img src="../images/1.jpg"/>
+					<img src="../images/2.jpg"/>
+					<img src="../images/3.png"/>
+					<img src="../images/4.jpg"/>
+				</section>
+				<section class="center-centent">
+					<h3>热门手机回收</h3>
+					<a href="#">查看更多<i>></i></a>
+				</section>
+				<section class="center-bottom">
+					<img src="../images/2018-01-08_154024.png"/>
+					<ul>
+						<li><a href="#"><img src="../images/5.jpg"/><p>苹果iPhone6</p></a></li>
+						<li><a href="#"><img src="../images/6.jpg"/><p>苹果iPhone5s</p></a></li>
+						<li><a href="#"><img src="../images/7.jpg"/><p>小米M4</p></a></li>
+						<li><a href="#"><img src="../images/8.jpg"/><p>华为Mate7</p></a></li>
+						<li><a href="#"><img src="../images/9.jpg"/><p>魅族MX5</p></a></li>
+					</ul>	
+				</section>
+				<section class="center-centent">
+					<h3>优品精选</h3>
+					<a href="#">查看更多<i>></i></a>
+				</section>
+				<section class="center-bottom">
+					<img src="../images/2018-01-08_154054.png"/>
+					<ul>
+						<li><a href="#"><img src="../images/10.jpg"/><p>苹果iPhone6</p><p>￥399</p></a></li>
+						<li><a href="#"><img src="../images/11.jpg"/><p>苹果iPhone5s</p><p>￥399</p></a></li>
+						<li><a href="#"><img src="../images/12.jpg"/><p>小米M4</p><p>￥789</p></a></li>
+						<li><a href="#"><img src="../images/13.jpg"/><p>华为Mate7</p><p>￥699</p></a></li>
+						<li><a href="#"><img src="../images/14.jpg"/><p>魅族MX5</p><p>￥469</p></a></li>
+					</ul>	
+				</section>
+			</div>
+		</section>
+		<section id="bootstrap">
+			
+		</section>
+		<footer>
+			
+		</footer>
 	</body>
+	<script type="text/javascript">
+		 var swiper = new Swiper('.swiper-container', {
+		      spaceBetween: 30,
+		      pagination: {
+		        el: '.swiper-pagination',
+		        clickable: true,
+		      },
+		});
+	</script>
 </html>
