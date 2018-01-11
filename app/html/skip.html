@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../dist/css/skip.css"/>
+		<script src="../lib/js/params.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header>
+			<div class="left">
+				<div class="kaifeng">
+					<span><a href="#">同城帮</a></span>
+					<span><a href="#">上门服务</a></span>
+					<span><a href="#">手机回收</a></span>
+					<span><a href="#">二手优品</a></span>
+				</div>
+				<ul>
+					<li><a href="#">查询订单</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li><a href="#">在线客服(9:00-21:00)</a></li>
+				</ul>
+			</div>
+		</header>
+		<section id="header">
+			<div id="ershou-top">
+				<div class="log">
+					<img src="../images/logo.png"/>
+					<ul>
+						<li class=""><a href="#">二手优品</a></li>
+						<li><a href="#">以旧换新</a></li>
+						<li><a href="#">手机升级</a></li>
+						<li><a href="#">企业采购</a></li>
+						<li><input type="text" name="" id="" value="" />
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section id="zong">
+			<section class="zong-top">
+				<a href="#">首页</a><i>></i><a href="#" class="product-name"></a>
+			</section>
+			<section class="zong-shang">
+				<section id="zong-shang-left">
+					<img src="" class="product-image"/>
+				</section>
+				<section id="zong-shang-right">
+					<p class="product-short_name"></p>
+					<section class="zong-right-price">
+						<div id="p1" class="p">
+							<p>价格</p><span>￥<b class="product-price"></b></span>
+						</div>
+						<div class="p">
+							<p>新机参考价</p><span>￥7088</span>
+						</div>
+						<div id="p3" class="p">
+							<p>促销信息</p><span><a href="#">领劵</a><a href="#">满2000-101>></a></span>
+						</div>
+						<div id="p4" class="p">
+							<p></p><span><b>赠品</b><b>全新品胜数据线一根，价值28元（仅限手机及平板产品）</b></span>
+						</div>
+						<div id="p5" class="p">
+							<p>专享</p><span><a href="#"><b>同城帮全国联保</b><b>7天无忧退·180天坏就换</b><i>></i></a></span>
+						</div>
+						<div id="p6" class="p">
+							<img src="../images/fanye1.png"/>
+						</div>
+					</section>
+					<section class="zong-right-xia">
+						<ul>
+							<li><span>网络</span><a href="#">WIFI版</a></li>
+							<li><span>颜色</span><a href="#">银色</a></li>
+							<li><span>容量</span><a href="#">32G</a></li>
+							<li><span>渠道</span><a href="#">国行</a></li>
+							<li><span>IMEI号</span><b></b><b id="wenhao">?</b></li>
+							<li><span>花呗分期</span><a href="#" id="bt"></a><a href="#" id="bt"></a><a href="#" id="bt"></a></li>
+						</ul>
+						<a href="#" id="bu">立即购买</a>
+					</section>
+				</section> 
+			</section>
+			<section id="zong-bottom">
+				<section class="zong-bottom-left">
+					<img src="../../../server/public/images/detail/7.png"/>
+				</section>
+				<section class="zong-bottom-right">
+					
+				</section>
+			</section>
+			
+			
+			
+			
+			
+		</section>
+		
+		
+		
+		
+		
+		
+		
+	</body>
+	<script type="text/javascript">
+		
+		var detas = window.localStorage.detail;
+		detas = JSON.parse(detas)
+		console.log(detas)
+		
+		
+		var url = location.href;
+		console.log(url)
+		var id = getParams (url,"id") 
+		console.log(id)
+		var product;
+		console.log(detas.data)	
+		for (var i = 0; i <detas.data.length; i++) {
+			var idz = detas.data[i].id;
+			if (id == idz) {
+				product = detas.data[i]
+			}
+		}
+		console.log(product)
+		$(".product-image").attr("src",product.imageurl);
+		$(".product-short_name").text(product.short_name);
+		$(".product-price").text(product.price);
+		$(".product-name").text(product.name);
+		
+	</script>
+</html>

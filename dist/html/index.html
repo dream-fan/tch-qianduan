@@ -4,11 +4,18 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../../dist/css/index.css"/>
-		<link rel="stylesheet" type="text/css" href="../../lib/swiper/css/swiper.min.css"/>
-		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../../lib/swiper/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../lib/swiper/css/swiper.min.css"/>
+		<script src="../lib/swiper/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css"/>
+		<script src="../lib/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/js/baiduTemplate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/js/paging.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=3db1e176345b8b8b86f9bfa90d59f377"></script>
+		<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
 	</head>
 	<body>
+		<a name="top"></a>
 		<header>
 			<div class="left">
 				<div class="kaifeng">
@@ -26,13 +33,21 @@
 					<li><a href="#">投诉建议</a></li>
 				</ul>
 			</div>
+			<div class="regist">
+				<div class="reginst">
+					
+				</div>
+			</div>
+			<div class="login">
+				
+			</div>
 		</header>
 		<section id="header">
-			<div id="ershou">
+			<div id="ershou-top">
 				<div class="log">
 					<img src="../images/logo.png"/>
 					<ul>
-						<li><a href="#">二手优品</a></li>
+						<li class=""><a href="#">二手优品</a></li>
 						<li><a href="#">手机回收</a></li>
 						<li><a href="#">手机维修</a></li>
 						<li><a href="#">电脑维修</a></li>
@@ -40,15 +55,60 @@
 						<li><a href="#">手机租用</a></li>
 					</ul>
 				</div>
-				<div class="swiper-container">
-				    <div class="swiper-wrapper">
-				      <div class="swiper-slide"><img src="../images/轮播1.png"/></div>
-				      <div class="swiper-slide"><img src="../images/轮播2.png"/></div>
-				      <div class="swiper-slide"><img src="../images/轮播3.jpg"/></div>
-				      <div class="swiper-slide"><img src="../images/轮播4.png"/></div>
-				    </div>
-					<div class="swiper-pagination"></div>
-	  			</div>
+			</div>
+			<div id="ershou-bottom">
+				<div class="container">
+					<div class="swiper-container">
+					    <div class="swiper-wrapper">
+					      <div class="swiper-slide"><img src="../images/轮播1.png"/></div>
+					      <div class="swiper-slide"><img src="../images/轮播2.png"/></div>
+					      <div class="swiper-slide"><img src="../images/轮播3.jpg"/></div>
+					      <div class="swiper-slide"><img src="../images/轮播4.png"/></div>
+					      
+					    </div>
+						<div class="swiper-pagination"></div>
+		  			</div>
+		  			<div class="float">
+			  				<div class="float-left">
+			  					<p><img src="../images/a.png"/></p>
+			  					<p>修手机/Pad</p>
+			  					<p>></p>
+			  					<img src="../images/arrow.jpg" class="img1"/>
+			  				</div>
+			  				<div class="float-left">
+			  					<p><img src="../images/b.png"/></p>
+			  					<p>修电脑</p>
+			  					<p>></p>
+			  					<img src="../images/arrow.jpg" class="img1"/>
+			  				</div>
+			  				<div class="float-left">
+			  					<p><img src="../images/c.png"/></p>
+			  					<p>卖手机/电脑</p>
+			  					<p>></p>
+			  					<img src="../images/arrow.jpg" class="img1"/>
+			  				</div>
+			  				<div class="float-left">
+			  					<p><img src="../images/d.png"/></p>
+			  					<p>买二手机</p>
+			  					<p>></p>
+			  					<img src="../images/arrow.jpg" class="img1"/>
+			  				</div>
+		  			</div>
+		  			<div class="float-right">
+		  				<div class="float-right-one" id="float-right-one">
+		  						1
+		  				</div>
+		  				<div class="float-right-one" id="float-right-two">
+		  						2
+		  				</div>
+		  				<div class="float-right-one" id="float-right-three">
+		  						3
+		  				</div>
+		  				<div class="float-right-one" id="float-right-four">
+		  						4
+		  				</div>
+		  			</div>
+				</div>
 			</div>
 		</section>
 		<section id="center">
@@ -63,7 +123,7 @@
 					<h3>热门手机回收</h3>
 					<a href="#">查看更多<i>></i></a>
 				</section>
-				<section class="center-bottom">
+				<section class="center-bottom1">
 					<img src="../images/2018-01-08_154024.png"/>
 					<ul>
 						<li><a href="#"><img src="../images/5.jpg"/><p>苹果iPhone6</p></a></li>
@@ -77,32 +137,212 @@
 					<h3>优品精选</h3>
 					<a href="#">查看更多<i>></i></a>
 				</section>
-				<section class="center-bottom">
+				<section class="center-bottom2">
 					<img src="../images/2018-01-08_154054.png"/>
-					<ul>
-						<li><a href="#"><img src="../images/10.jpg"/><p>苹果iPhone6</p><p>￥399</p></a></li>
+					<ul class="center-bottom2-li">
+						<!--<li><a href="#"><img src="../images/10.jpg"/><p>苹果iPhone6</p><p>￥399</p></a></li>
 						<li><a href="#"><img src="../images/11.jpg"/><p>苹果iPhone5s</p><p>￥399</p></a></li>
 						<li><a href="#"><img src="../images/12.jpg"/><p>小米M4</p><p>￥789</p></a></li>
 						<li><a href="#"><img src="../images/13.jpg"/><p>华为Mate7</p><p>￥699</p></a></li>
-						<li><a href="#"><img src="../images/14.jpg"/><p>魅族MX5</p><p>￥469</p></a></li>
+						<li><a href="#"><img src="../images/14.jpg"/><p >魅族MX5</p><p>￥469</p></a></li>-->
 					</ul>	
+				</section>
+				<section class="center-centent">
+					<h3>到店维修</h3>
 				</section>
 			</div>
 		</section>
 		<section id="bootstrap">
-			
+			<div class="bootstrap-zong">
+				<div class="bootstrap-left">
+					<div class="bootstrap-left1">
+						<div class="dropdown">
+							<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+									data-toggle="dropdown">
+										开封
+								<span class="caret"></span>
+							</button>
+						</div>
+						<div class="dropdown">
+							<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+									data-toggle="dropdown">
+										选择区县
+								<span class="caret"></span>
+							</button>
+						</div>
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="输入您的位置查找附近的商家">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="button">
+									搜索
+								</button>
+							</span>
+						</div>
+					</div>
+					<div class="bootstrap-left2">
+						<ul>
+							<li>默认排序</li>
+							<li>按成交量</li>
+							<li>按人气</li>
+							<li><input type="checkbox" name="" id="" value="" />先行赔付</li>
+						</ul>
+						<div id="mapbtn">地图模式</div>
+					</div>
+						<div class="black-cover">
+						</div>
+						<div id="container">
+							<div class="map-header">
+								<span>地图模式</span>  <span id="closebtn" style="float: right;">X</span>   
+							</div>
+						</div>
+					<div class="bootstrap-left3">
+					</div>
+					<div id="page" class="page_div">
+					</div>
+				</div>
+				<div class="bootstrap-right">
+					<h3>商家好评榜</h3>
+					<div class="haopin">
+						<b id="i">①</b>
+						<a href="">
+							<img src="../images/t011c09e505bc21cae6.jpg"/>
+						</a>
+						<div class="haopin-a">
+							<p><a href="#">开封科源办公机具有限</a></p>
+							<p>74条评论</p>
+						</div>
+					</div>
+					<div class="haopin">
+						<b id="i">②</b>
+						<a href="">
+							<img src="../images/t01c4fb168aefdd1ebb.jpg"/>
+						</a>
+						<div class="haopin-a">
+							<p><a href="#">尉氏县城关镇超平电脑商行</a></p>
+							<p>50条评论</p>
+						</div>
+					</div>
+					<div class="haopin">
+						<b id="i">③</b>
+						<a href="">
+							<img src="../images/t01a0939511d0a97fe0.jpg"/>
+						</a>
+						<div class="haopin-a">
+							<p><a href="#">众邦电脑医院</a></p>
+							<p>25条评论</p>
+						</div>
+					</div>
+					<div class="haopin">
+						<b>④</b>
+						<a href="">
+							<img src="../images/t012fc281af0d54071e.jpg"/>
+						</a>
+						<div class="haopin-a">
+							<p><a href="#">睿智科技</a></p>
+							<p>17条评论</p>
+						</div>
+					</div>
+					<div class="haopin">
+						<b>⑤</b>
+						<a href="">
+							<img src="../images/t01a6c9417fc6b8f29e.jpg"/>
+						</a>
+						<div class="haopin-a">
+							<p><a href="#">联成电脑维修中心</a></p>
+							<p>13条评论</p>
+						</div>
+					</div>
+					<div class="haopin">
+						<b>⑥</b>
+						<a href="">
+							<img src="../images/t011f1e3b8661dbb503.jpg"/>
+						</a>
+						<div class="haopin-a">
+							<p><a href="#">友诚笔记本维修</a></p>
+							<p>11条评论</p>
+						</div>
+					</div>
+					<div class="haopin">
+						<b>⑦</b>
+						<a href="#">
+							<img src="../images/t01ec3ff09254f85ed0.png"/>
+						</a>
+						<div class="haopin-a">
+							<p><a href="#">尉氏时代电脑</a></p>
+							<p>7条评论</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 		<footer>
-			
+			<div class="footer-top">
+				<ul>
+					<li>
+						<img src="../images/f1.jpg"/>
+						<div class="footer">
+							<h3>购物指南</h3>
+							<a href="#">购物流程</a>
+							<a href="#">帮助文档</a>
+						</div>
+					</li>
+					<li>
+						<img src="../images/f2.jpg"/>
+						<div class="footer">
+							<h3>支付方式</h3>
+							<a href="#">在线支付、当面付款</a>
+						</div>
+					</li>
+					<li>
+						<img src="../images/f3.jpg"/>
+						<div class="footer">
+							<h3>售后服务</h3>
+							<a href="#">投诉建议</a>
+							<a href="#">售后说明</a>
+						</div>
+					</li>
+					<li>
+						<img src="../images/f5.jpg"/>
+						<div class="footer">
+							<h3>商家合作</h3>
+							<a href="#">加盟同城帮</a>
+							<a href="#">新闻采访/跨界合作</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-bottom">
+				<div class="p">
+					<p>客服电话：4000-399-360 / 010-53767360 <a href="#">投诉建议</a> <a href="#">网站地图</a></p>
+					<p>Copyright © 2005-2018  360.CN  All Rights Reserved  360安全中心</p>
+					<p><a href="#">京ICP备08010314号-19</a>    京公网安备110000000006号</p>
+				</div>
+			</div>	
 		</footer>
+		<a href="#top" title="置顶" class="acss">返回顶部</a>
 	</body>
-	<script type="text/javascript">
-		 var swiper = new Swiper('.swiper-container', {
-		      spaceBetween: 30,
-		      pagination: {
-		        el: '.swiper-pagination',
-		        clickable: true,
-		      },
-		});
+	<script type="text/html" id="store-list-item-temp">
+		<%for (var i = 0; i < data.length; i++) {%>
+			<div class="bootstrap-left3-zong">
+					<div class="bootstrap-img">
+						<img src="<%= data[i].imgurl %>"/>
+					</div>
+					<div class="bootstrap-you">
+						<p><a href="#"><%= data[i].name %></a><span>店铺等级：<%= data[i].grade %></span></p>
+						<p>主营：<%= data[i].business %></p>
+						<p id="p"><b>地址：<%= data[i].adress %></b><b>人气：<%= data[i].popularity %>次浏览量</b></p>
+					</div>
+					<div class="bootstrap-btn">
+						 
+					</div>	
+			</div>
+		<%}%>
 	</script>
+	<script type="text/html" id="center-bottom2-baidu">
+		<%for (var i = 0; i < data.length; i++) {%>
+			<li><a href="http://127.0.0.1:8020/day16/tcb/app/html/skip.html?id=<%= data[i].id %>" target="_blank"><img src="<%= data[i].imageurl %>" /><p><%= data[i].name %></p><p><%= data[i].price %></p></a></li>
+		<%}%>
+	</script>
+	<script src="//webapi.amap.com/ui/1.0/main.js"></script>
+	<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
 </html>

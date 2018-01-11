@@ -39,17 +39,22 @@ gulp.task("image",function  () {
 })
 
 
+gulp.task('lib',function(){
+  gulp.src('app/lib/**/*.*')
+  .pipe(gulp.dest('dist/lib'))
+})
+
+
+
 //del
 gulp.task("del",function  () {
 	del("dist")
 })
 
 
-
-
 gulp.task("default",["del"],function  () {
 	setTimeout(function  () {
-		gulp.start("html","less","script","image")
+		gulp.start("html","less","script","image","lib","watch")
 	},200)
 })
 
@@ -65,6 +70,9 @@ gulp.task('watch', function() {
   gulp.watch('app/images/*', ['image']);
   //监听html的改动
   gulp.watch('app/html/*', ['html']);
+  
+   gulp.watch('app/lib/**/*.*', ['lib']);
+  
   // 创建浏览器自动刷新服务器
   livereload.listen();
   // dist目录下文件有改动就会浏览器刷新
