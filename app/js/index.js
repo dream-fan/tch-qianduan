@@ -195,8 +195,101 @@ var map = null;
 
 
 
+//注册页面============================
+$("#regist").click(function  () {
+	$(".regist").addClass("regist").show();
+})
 
 
+$("#login").click(function  () {
+	$(".login").addClass("login").show();
+})
 
 
+$(".diancha").click(function  () {
+	$(".login").addClass("login").hide();
+	$(".regist").addClass("regist").hide();
+})
 
+
+//注册
+$('#form1').validate({
+	onFocus: function() {
+		this.parent().addClass('active');
+		return false;
+	},
+
+	onBlur: function() {
+		var $parent = this.parent();
+		var _status = parseInt(this.attr('data-status'));
+		$parent.removeClass('active');
+		if(!_status) {
+			$parent.addClass('error');
+		}
+		return false;
+	}
+});
+
+//生成验证码
+var verifyCode = new GVerify("v_container");
+
+$('#form1').on('submit', function(event) {
+	event.preventDefault();
+	var fr = $(this).validate('submitValidate'); //return boolean;
+	var vr = verifyCode.validate($("#verifyCode").val())
+	if(fr && vr) {
+		console.log('验证通过！！')
+
+		var email = $("#email1").val()
+		var password = $("#password1").val()
+
+		$.post('http://localhost:3000/regist', { email: email, password: password }, function(res) {
+			console.log(res)
+			if(res.status == 'ok') {
+//				$(".regist_err").text('注册成功')
+				$(".login").addClass("login").show(); 
+			} else {
+				$("#regist_err1").text('账号已注册')
+			}
+		}) 
+	}
+});
+
+
+//登录
+$('#form2').validate({
+	onFocus: function() {
+		this.parent().addClass('active');
+		return false;
+	},
+
+	onBlur: function() {
+		var $parent = this.parent();
+		var _status = parseInt(this.attr('data-status'));
+		$parent.removeClass('active');
+		if(!_status) {
+			$parent.addClass('error');
+		}
+		return false;
+	}
+});
+
+$('#form2').on('submit', function(event) {
+	event.preventDefault();
+	var fr = $(this).validate('submitValidate'); //return boolean;
+//	var vr = verifyCode.validate($("#verifyCode2").val())
+	if(fr) {
+		console.log('验证通过！！')
+
+		var email = $("#email2").val()
+		var password = $("#password2").val()
+		$.post('http://localhost:3000/login', { email: email, password: password }, function(res) {
+			console.log(res)
+			if(res.status == 'ok') {
+				window.location.href = "index.html"
+			} else {
+				$("#regist_err2").text('用户名或密码错误')
+			}
+		})
+	}
+});

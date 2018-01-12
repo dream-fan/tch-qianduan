@@ -5,6 +5,8 @@
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../../dist/css/index.css"/>
 		<script src="../lib/js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/js/gVerify.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/js/jquery-validate.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="../lib/swiper/css/swiper.min.css"/>
 		<script src="../lib/swiper/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css"/>
@@ -16,6 +18,62 @@
 	</head>
 	<body>
 		<a name="top"></a>
+		<div class="regist">
+			<div class="reginst-page">
+				<div class="reginst-page-top">
+					<p>欢迎注册360同城帮</p>
+					<button class="diancha">X</button>
+				</div>	
+				<div class="reginst-page-bottom">
+					<div class="reginst-bottom-left">
+						<span>邮箱注册</span>
+						<p>已有账号，<a href="#">立即登录</a></p>
+					</div>
+					<div class="reginst-bottom-right">
+						<form id="form1">
+							<div class="form_control">
+							 <span id="">账&nbsp;&nbsp;&nbsp;号：</span><input class="required" value="" type="text" name="email" id="email1" data-tip="请输入您的邮箱" data-valid="isNonEmpty||isEmail" data-error="email不能为空||邮箱格式不正确" />
+							</div>
+			
+							<div class="form_control">
+						         <span id="">密&nbsp;&nbsp;&nbsp;码：</span><input class="required" value="" type="password"  name="nickname"  id="password1" data-tip="请输入您的密码" data-valid="isNonEmpty||between:6-16" data-error="密码不能为空||密码长度6-16位" />
+							</div>
+			
+							<div id="v_container"></div>
+							<div class="form_control">
+							<span id="">验证码：</span><input class="required" type="text" id="verifyCode" value="" placeholder="请输入验证码" data-tip="请输入验证码" data-valid="isNonEmpty||between:4-4" data-error="验证码不能为空||验证码长度为4位" />
+							</div>
+							<input type="submit" value="注册" class="sbm"/>
+							<div id="regist_err1" style="color:red">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="login">
+			<div class="login-page">
+					<div class="reginst-page">
+				<div class="reginst-page-top">
+					<p>欢迎注册360同城帮</p>
+					<button class="diancha">X</button>
+				</div>	
+				<div class="login-page-bottom">
+						<form id="form2">
+							<div class="form_control">
+							 <span id="">账&nbsp;&nbsp;&nbsp;号：</span><input class="required" value="" type="text" name="email" id="email2" data-tip="请输入您的邮箱" data-valid="isNonEmpty||isEmail" data-error="email不能为空||邮箱格式不正确" />
+							</div>
+							<div class="form_control">
+						         <span id="">密&nbsp;&nbsp;&nbsp;码：</span><input class="required" value="" type="password"  name="nickname" id="password2" data-tip="请输入您的密码" data-valid="isNonEmpty||between:6-16" data-error="密码不能为空||密码长度6-16位" />
+							</div>
+							<input type="submit" value="登录" class="sbm"/>
+							<div id="regist_err2" style="color:red">
+							</div>
+						</form>
+				</div>
+			</div>
+			</div>
+		</div>
 		<header>
 			<div class="left">
 				<div class="kaifeng">
@@ -24,22 +82,14 @@
 					<span><a href="#">同城帮首页</a></span>
 				</div>
 				<ul>
-					<li><a href="#">登录</a></li>
-					<li><a href="#">注册</a></li>
+					<li><a href="#" id="login">登录</a></li>
+					<li><a href="#" id="regist">注册</a></li>
 					<li><a href="#">我的订单</a></li>
 					<li><a href="#">在线客服(9:00-21:00)</a></li>
 					<li><a href="#">客户服务</a></li>
 					<li><a href="#">论坛</a></li>
 					<li><a href="#">投诉建议</a></li>
 				</ul>
-			</div>
-			<div class="regist">
-				<div class="reginst">
-					
-				</div>
-			</div>
-			<div class="login">
-				
 			</div>
 		</header>
 		<section id="header">

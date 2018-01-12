@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.form_control.success .valid_message {
+				background: url(../images/sucess.png) no-repeat center right;
+				left: auto;
+				right: 5px;
+				top: 4px;
+				width: 16px;
+				height: 16px;
+			}
+			
+			.none {
+				display: none;
+			}
+			
+			#v_container {
+				width: 400px;
+				height: 100px;
+			}
+			
+			.form_control {
+				display: flex;
+				align-items: center;
+				height: 30px;
+			}
+			
+			.form_control span {
+				display: block;
+				width: 120px;
+				height: 45px;
+				line-height: 45px;
+				text-align: right;
+			}
+			
+			.sbm {
+				width: 80px;
+				height: 30px;
+				font-size: 22px;
+				text-align: center;
+				line-height: 30px;
+				background: yellowgreen;
+				color: white;
+				border: 0;
+				margin-left: 150px;
+				margin-top: 10px;
+			}
+			
+			.form_control.error .valid_message {
+				color: #f00;
+			}
+			
+			.form_control.error span {
+				width: 120px;
+			}
+			
+			.login-page-bottom {
+				display: flex;
+				form {
+					margin-top: 30px;
+					margin-left: 90px;
+				}
+			}
+			
+			.regist_err {
+				/*text-align: center;*/
+				margin: 5px;
+			}
+		</style>
+	</head>
+		<script src="../lib/js/jquery-1.12.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/js/gVerify.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../lib/js/jquery-validate.js" type="text/javascript" charset="utf-8"></script>
+
+	<body>
+		<h1>登录</h1>
+		<form>
+			<div class="form_control">
+				<span id="">账&nbsp;&nbsp;&nbsp;号：</span><input class="required" value="" type="text" name="email" id="email" data-tip="请输入您的邮箱" data-valid="isNonEmpty||isEmail" data-error="email不能为空||邮箱格式不正确">
+			</div>
+
+			<div class="form_control">
+				<span id="">密&nbsp;&nbsp;&nbsp;码：</span><input class="required" value="" type="password" id="password" data-tip="请输入您的密码" data-valid="isNonEmpty||between:6-16" data-error="密码不能为空||密码长度6-16位" name="nickname">
+			</div>
+
+			<div id="v_container"></div>
+			<div class="form_control">
+				<span id="">验证码：</span><input class="required" type="text" id="verifyCode" value="" placeholder="请输入验证码" data-tip="请输入验证码" data-valid="isNonEmpty||between:4-4" data-error="验证码不能为空||验证码长度为4位" />
+			</div>
+
+			<button class="sbm">提交</button>
+			<div class="regist_err" style="color:red">
+			</div>
+		</form>
+	</body>
+<script type="text/javascript">
+	$('form').validate({
+	onFocus: function() {
+		this.parent().addClass('active');
+		return false;
+	},
+
+	onBlur: function() {
+		var $parent = this.parent();
+		var _status = parseInt(this.attr('data-status'));
+		$parent.removeClass('active');
+		if(!_status) {
+			$parent.addClass('error');
+		}
+		return false;
+	}
+});
+
+//生成验证码
+var verifyCode = new GVerify("v_container");
+
+$('form').on('submit', function(event) {
+	event.preventDefault();
+	var fr = $(this).validate('submitValidate'); //return boolean;
+	var vr = verifyCode.validate($("#verifyCode").val())
+	if(fr && vr) {
+		console.log('验证通过！！')
+
+		var email = $("#email").val()
+		var password = $("#password").val()
+
+		$.post('http://localhost:3000/login', { email: email, password: password }, function(res) {
+			console.log(res)
+			if(res.status == 'ok') {
+				window.location.href = "index.html"
+//				$(".regist_err").text('登录成功')
+			} else {
+				$(".regist_err").text('用户名或密码错误')
+			}
+		})
+	}
+})
+</script>
+</html>

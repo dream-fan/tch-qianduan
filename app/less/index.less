@@ -512,6 +512,139 @@ span {
     line-height: 30px;
 }
 
+//注册====================================
+.regist,.login{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 20;
+    .reginst-page{
+        position: absolute;
+        width: 544px;
+        height: 280px;
+        background-color: white;
+        top: 25%;
+        left: 30%;
+        font-size: 15px;
+        .reginst-page-top{
+            background-color: #E7F6FA;
+            height: 57px;
+            padding: 0px 20px;
+            border-bottom: solid 1px #E5E5E5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            button{
+                width: 20px;
+                height: 20px;
+                border: none;
+                color: #C4CED7;
+                background-color: #E4F5FA;
+            }
+            button:hover{
+                width: 20px;
+                height: 20px;
+                border: solid 1px black;
+                background-color: white;
+            }
+        }
+        .reginst-page-bottom{
+            display: flex;
+            .reginst-bottom-left{
+                height: 220px;
+                width: 20%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: center;
+                border-right:  solid 1px #E4EBEC;
+                background-color: #FFFFFF;
+                span{
+                    padding: 13px 35px;
+                    border-bottom: solid 1px #E4EBEC;
+                }
+            }
+            .reginst-bottom-right{
+                display: flex;
+                align-items: center;
+            }
+
+        }
+    }
+}
+
+.form_control.success .valid_message {
+    background: url(../images/sucess.png) no-repeat center right;
+    left: auto;
+    right: 5px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+  }
+  .none {
+    display: none;
+  }
+#v_container {
+    margin: 0 auto;
+    padding-left: 140px;
+}
+.form_control {
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+.form_control span {
+    display: block;
+    width: 120px;
+    height: 45px;
+    line-height: 45px;
+    text-align: right;
+}
+
+.sbm {
+    width: 80px;
+    height: 30px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 30px;
+    background: yellowgreen;
+    color: white;
+    border: 0;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+.form_control.error .valid_message {
+    color: #f00;
+}
+.form_control.error span{
+    width: 94px;
+}
+//.login-page-bottom{
+//  display: flex;
+//  form{
+//      margin-top: 30px;
+//      margin-left: 90px;
+//  }
+//}
+//.regist_err{
+//  text-align: center;
+//  margin: 5px;
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //====================================锚点
